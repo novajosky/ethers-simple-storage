@@ -3,9 +3,8 @@ const fs = require("fs-extra");
 require("dotenv").config();
 
 async function main() {
-  //http://127.0.0.1:7545
   const provider = new ethers.providers.JsonRpcProvider(
-    "http://127.0.0.1:7545"
+    process.env.RPC_URL
   );
   const wallet = new ethers.Wallet(
     process.env.PRIVATE_KEY,
